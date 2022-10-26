@@ -1,0 +1,31 @@
+$breakpoints:(
+        "xs": 575.98px,
+        "sm": 767.98px,
+        "md": 991.98px
+);
+
+
+@media (max-width: map-get($breakpoints, "md")){
+        :root{
+                font-size:14px
+        }
+}
+
+@media (max-width: map-get($breakpoints, "sm")){
+        :root{
+                font-size:12px
+        }
+}
+
+@media (max-width: map-get($breakpoints, "xs")){
+        :root{
+                font-size:10px
+        }
+}
+
+
+@mixin xsm {
+        @media (max-width: map-get($breakpoints, "xs")){
+        	@content;
+        }
+}
