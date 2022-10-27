@@ -1,0 +1,101 @@
+@use './reset.scss' as *;
+@use './_tools.scss' as *;
+@use './_variables.scss' as *;
+@use './font' as *;
+@use  './media' as *;
+
+body{
+        background-image: url('4775334_19366.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+main{
+        padding-inline: pixToRem(16px);
+        font-family: 'Montserrat', sans-serif;
+        display: grid;
+        place-items: center;
+}
+
+.main-form{
+        width: clamp(pixToRem(150px), 100%, pixToRem(478px));
+        margin: auto;
+        padding-block: pixToRem(20px);
+        padding-inline: pixToRem(40px);
+        box-shadow: 0px 5px 16px 2px hsla(0, 0%, 0%, 0.122);
+        border-radius: pixToRem(8px);
+        margin-top: 10vh;
+        background-color: white;
+
+         * + .form-element{
+                margin-top: pixToRem(12px,em);
+        }
+        h1 + *{
+                margin-top: pixToRem(20px,em);
+        }
+        h1{
+                font-size: pixToRem(28px);
+                text-align: center;
+        }
+
+        .form-element{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                border: pixToRem(1px) solid $light-grey;
+                border-radius: pixToRem(4px);
+                padding-block: pixToRem(12px);
+                padding-inline: pixToRem(16px);
+                
+                input{
+                        all: unset;
+                        max-height: pixToRem(20px);
+                        margin-top: pixToRem(4px);
+                }
+                input[type="number"]{
+                        appearance: textfield;
+                        
+                        
+                }
+                label{
+                        font-size: pixToRem(12px);
+                        color: $light-grey;
+                }
+        }
+
+        .cta{
+                $primary:#453F78;
+                all: unset;
+                text-align: center;
+                ;
+                background-color: $primary;
+                width: 100%;
+                padding-block: pixToRem(12px, em);
+                border-radius: pixToRem(4px, em);
+                margin-top: pixToRem(16px, em);
+                color: white;
+
+                &:hover{
+                        cursor: pointer;
+                        transition: background 200ms ease-in-out;
+                        background-color: lighten($primary, $amount: 20);
+                }
+        }
+}
+
+.form-select{
+        margin-top: pixToRem(12px,em);
+        display: flex;
+        flex-direction: column;
+        &>[id="gender"]{
+                
+                margin-top: pixToRem(4px,em);
+                padding: pixToRem(8px,em) pixToRem(16px,em);
+                background-color: white;
+                border: none;
+                border: pixToRem(1px,em) solid $light-grey;
+                
+
+                
+        }
+}
