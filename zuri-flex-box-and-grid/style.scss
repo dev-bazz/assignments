@@ -1,0 +1,138 @@
+@use "./reset" as *;
+$rootFont: 15;
+$radius: remEmConverter(8);
+$white: hsl(0, 0%, 95%);
+$orange: hsl(31, 77%, 52%);
+$Dark-cyan: hsl(184, 100%, 22%);
+$Very-dark-cyan: hsl(179, 100%, 13%);
+
+:root {
+    font-size: $rootFont + px;
+}
+
+@function remEmConverter($value) {
+    @return ($value / $rootFont)+em;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    max-width: remEmConverter(750);
+}
+
+// flex-wrap: wrap;
+
+.card1 {
+    background-color: #621717;
+    padding: 3em 2em;
+    flex-basis: 100%;
+    min-width: remEmConverter(150);
+
+    //    max-width: remEmConverter(300);
+}
+
+.card1 h2 {
+    font-family: "Big Shoulders Display", cursive;
+    color: $white;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.card1 p {
+    font-family: "Lexend Deca", sans-serif;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.card1 a {
+    text-decoration: none;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.card1>*+* {
+    margin-top: remEmConverter(90);
+}
+
+.info>*+* {
+    margin-top: remEmConverter(20);
+}
+
+.card1:nth-child(1) {
+    background-color: $orange;
+    border-top-left-radius: remEmConverter(8);
+    border-bottom-left-radius: remEmConverter(8);
+
+    a {
+        color: $orange;
+        background-color: $white;
+        padding: 0.8em 2em;
+        border-radius: 10em;
+
+        &:hover {
+            background-color: $orange;
+            color: $white;
+            border: 2px solid $white;
+        }
+    }
+}
+
+nav a{
+    /* all: unset; */
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.card1:nth-child(2) {
+    background-color: hsl(184, 100%, 22%);
+
+    a {
+        color: $Dark-cyan;
+        background-color: $white;
+        padding: 0.8em 2em;
+        border-radius: 10em;
+
+        &:hover {
+            background-color: $Dark-cyan;
+            color: $white;
+            border: 2px solid $white;
+        }
+    }
+}
+
+.card1:nth-child(3) {
+    background-color: hsl(179, 100%, 13%);
+    border-top-right-radius: remEmConverter(8);
+    border-bottom-right-radius: remEmConverter(8);
+
+    a {
+        color: $Very-dark-cyan;
+        background-color: $white;
+        padding: 0.8em 2em;
+        border-radius: 10em;
+
+        &:hover {
+            background-color: $Very-dark-cyan;
+            color: $white;
+            border: 2px solid $white;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    :root{
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root{
+        font-size: 4px;
+    }
+}
